@@ -31,6 +31,22 @@ Route::group('admin',function(){
     Route::get('about/tel','admin/about/tel');
     //联系方式修改
     Route::any('about/xiugai','admin/about/xiugai');
+    //修改前台首页企业文化
+    Route::any('abouts/edit','admin/abouts/edit',['methed'=>'get|post']);
+    //前台企业文化
+    Route::any('abouts/shouye','admin/abouts/shouye');
+    //前台企业文化
+    Route::any('abouts/index','admin/abouts/index');
+    //前台首页公司主营业务
+    Route::get('business/index','admin/business/index');
+    //添加业务
+    Route::any('business/tianjia','admin/business/tianjia',['methed'=>'get|post']);
+    //修改业务
+    Route::any('business/xiugai','admin/business/xiugai',['methed'=>'get|post']);
+    //删除业务
+    Route::post('business/shanchu','admin/business/shanchu');
+    //公司二维码
+    Route::get('picture/index','admin/picture/index');
 
 
 });

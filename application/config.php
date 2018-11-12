@@ -38,6 +38,7 @@ return [
         'reset'    => true
     ],
 
+    'plugin'                =>'/plugin/',
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace

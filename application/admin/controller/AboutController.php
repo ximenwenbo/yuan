@@ -5,17 +5,12 @@ namespace app\admin\controller;
 use app\admin\model\Tel;
 use think\Controller;
 use think\Request;
+use think\Route;
+use app\admin\model\Shouye;
 
 class AboutController extends Controller
 {
-    public function index()
-    {
 
-
-
-        return $this->fetch();
-
-    }
     public function tel(){
 
         //获取信息
@@ -61,8 +56,46 @@ class AboutController extends Controller
 
     }
 
+    //前台首页两个模块
+    public function shouye(){
+        return $this->fetch();
+    }
 
 
+    //首页公司文化和公司业务编辑
+    public function edit(Request $request){
+        $data = $request->post();
+        $shouye = new shouye();
+
+        $rst = $shouye->update($data);
+
+        if($rst){
+
+
+            return   ['status'=>'success'];
+        }else{
+            return  ['status'=>'failure'];
+        }
+
+
+
+
+
+
+    }
+
+
+    public function index(){
+
+          $infos = Shouye::select();
+          $info = $infos[0];
+
+
+          $this->assign('info',$info);
+
+          return $this->fetch();
+
+    }
 
 
 
