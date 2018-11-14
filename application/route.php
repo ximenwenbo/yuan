@@ -47,6 +47,13 @@ Route::group('admin',function(){
     Route::post('business/shanchu','admin/business/shanchu');
     //公司二维码
     Route::get('picture/index','admin/picture/index');
+    //公司简介
+    Route::get('profiles/index','admin/profiles/index');
+    //添加简介
+    Route::any('profiles/tianjia','admin/profiles/tianjia',['methed'=>'get|post']);
+    //修改简介
+    Route::any('profiles/xiugai','admin/profiles/xiugai',['methed'=>'get|post']);
+
 
 
 });
