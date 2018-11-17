@@ -2,7 +2,7 @@
 
     //页面加载完毕后，给form表单设置submit提交事件
     $(function(){
-        $('#xiugai').submit(function(evt){
+        $('#tian').submit(function(evt){
             evt.preventDefault();//阻止浏览器提交动作
             var shuju = $(this).serialize(); //收集form表单信息
 
@@ -11,13 +11,13 @@
 
             //ajax传递数据到服务器端存储
             $.ajax({
-                url:'{:url("xiugai")}',    // /admin/profiles/xiugai
+                url:'{:url("tianjia")}',    // /admin/news/tianjia
                 data:shuju,
                 dataType:'json',
                 type:'post',
                 success:function(msg){
                     if(msg.status=='success'){
-                        layer.alert('修改成功',{icon:6},function(){
+                        layer.alert('添加成功',{icon:6},function(){
                             //下述① 和 ②执行顺序要求
 
                             parent.window.location.href=parent.window.location.href;
@@ -25,7 +25,7 @@
                             layer_close();
                         });
                     }else{
-                        layer.alert('修改失败【'+msg.errorinfo+'】',{icon:5});
+                        layer.alert('添加失败【'+msg.errorinfo+'】',{icon:5});
                     }
                 }
             });

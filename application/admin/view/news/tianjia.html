@@ -1,28 +1,40 @@
 {include file="pub/head"}
 
-<title>添加用户 - H-ui.admin v3.1</title>
+<title>添加新闻 - H-ui.admin v3.1</title>
 <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
 <body>
 <article class="page-container">
-	<form action="" method="post" class="form form-horizontal" id="xiugai">
-		<input type="hidden" name="id" value="{$info.id}">
+	<form action="" method="post" class="form form-horizontal" id="tian">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>新闻标题：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text"  class="input-text" value=""  id="username" name="title">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>新闻作者：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text"  maxlength="15" class="input-text" value=""   name="author">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">新闻内容：</label>
 
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">关于我们：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="about_us"  class="textarea"  placeholder="说点什么...200个字符以内" dragonfly="true">{$info.about_us}</textarea>
-				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+
+				<textarea name="content"   class="textarea"  placeholder="说点什么...500个字符以内" dragonfly="true" ></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/500</p>
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">公司简介：</label>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>新闻关键字：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="profiles"  class="textarea"  placeholder="说点什么...200个字符以内" dragonfly="true">{$info.profiles}</textarea>
-				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+				<input type="text"   class="input-text" value=""   name="keywords">
 			</div>
 		</div>
+
 
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
@@ -83,4 +95,4 @@ $(function(){
 </script> 
 <!--/请在上方写此页面业务相关的脚本-->
 {include file="pub/foot"}
-{include file="profiles/js_xiugai"}
+{include file="news/js_tianjia"}

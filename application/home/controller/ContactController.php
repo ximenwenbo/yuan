@@ -3,9 +3,9 @@ namespace app\home\controller;
 
 
 use think\Controller;
-use app\home\model\Profiles;
+use app\home\model\Contact;
 
-class AboutController extends Controller
+class ContactController extends Controller
 {
     public function index()
     {
@@ -13,19 +13,20 @@ class AboutController extends Controller
         //获取联系方式
         $info = get_tel();
 
+
         $this->assign('info',$info);
 
-        $p = new Profiles();
-
-        $infos = $p->select()[0];
-
-        $this->assign('infos',$infos);
 
 
 
 
         return $this->fetch();
 
+    }
+
+    public function map(){
+
+        return $this->fetch();
     }
 
 

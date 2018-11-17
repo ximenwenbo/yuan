@@ -20,6 +20,7 @@ return [
     'home_images'=>'/home/images/',
     'home_js'=>'/home/js/',
     'home_fonts'=>'/home/fonts/',
+    'home_jquery'=>'/home/jquery-3.3.1/',
 
     //后台配置文件
     'admin_lib' =>'/admin/lib/',
@@ -41,6 +42,7 @@ return [
     'plugin'                =>'/plugin/',
     // 应用调试模式
     'app_debug'              => true,
+    'datetime_format' =>false,
     // 应用Trace
     'app_trace'              => true,
     // 应用模式状态
@@ -193,7 +195,10 @@ return [
         // 日志保存目录
         'path'  => LOG_PATH,
         // 日志记录级别
-        'level' => [],
+        'level' => ['error','notice'], //日志记录级别，市场量 去base.php中修改
+        'file_size'=>30,    //单个日志文件超过30,给你生成时间戳的日志
+        'apart_level'=>['error','sql'],  //error和sql日志不和系统日志在一个文件中保存
+
     ],
 
     // +----------------------------------------------------------------------
@@ -261,4 +266,5 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
 ];
