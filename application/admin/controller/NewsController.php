@@ -16,11 +16,9 @@ class NewsController extends Controller
     //新闻列表
     public function index(){
 
-        $info  = DB::name('news') ->order('id desc')->paginate(3);
+        $info  = News::select();
         $this->assign('info',$info);
-        //获得分页页码列表信息
-        $pagelist = $info->render();
-        $this->assign('pagelist',$pagelist);
+
         return $this->fetch();
 
     }

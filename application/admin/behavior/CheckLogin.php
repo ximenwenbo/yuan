@@ -24,7 +24,7 @@ class CheckLogin
             echo <<<eof
                 <script type="text/javascript">
                     //top:会使得浏览器全部(非iframe)页面都跳转
-                    window.top.location.href='/admin/manager/login';
+                    window.top.location.href='/admin/admin';
                 </script>
 eof;
             exit;

@@ -2,21 +2,9 @@
 
 <title>公司简介设置</title>
 
-<style type="text/css">
-	/*分页样式*/
-	.pagination li{list-style:none;float:left;margin-left:10px;
-		padding:0 10px;
-		background-color:#5a98de;
-		border:1px solid #ccc;
-		height:26px;
-		line-height:26px;
-		cursor:pointer;
-		color:#fff;
-	}
-	.pagination li a{color:white;}
-	.pagination li.active{background-color:white;color:gray;}
-	.pagination li.disabled{background-color:white;color:gray;}
-</style>
+<script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="{:config('plugin')}ueditor/ueditor.all.min.js"> </script>
+
 
 
 
@@ -37,7 +25,7 @@
 				<th width="30">ID</th>
 				<th width="50">新闻标题</th>
 				<th width="50">新闻作者</th>
-				<th width="100">新闻内容</th>
+
 				<th width="50">新闻关键字</th>
 
 
@@ -53,7 +41,7 @@
 				<td>{$v.id}</td>
 				<td>{$v.title}</td>
 				<td>{$v.author}</td>
-				<td>{$v.content}</td>
+
 				<td>{$v.keywords}</td>
 				<td class="td-manage">
 					<a title="编辑" href="javascript:;"
@@ -67,7 +55,7 @@
 				</td>
 			</tr>
 			{/volist}
-			<tr><td colspan="100">{$pagelist}</td></tr>
+
 		</tbody>
 	</table>
 	</div>
@@ -75,7 +63,27 @@
 
 {include file="news/js_index" /}
 
+
+	<script type="text/javascript" src="{:config('admin_lib')}My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="{:config('admin_lib')}datatables/1.10.0/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="{:config('admin_lib')}laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" >
+        $(function(){
+            $('.table-sort').dataTable({
+               'lengthMenu':[[1,2,5,8],['一条','二条','五条','八条',]],
+              'info':true,
+                "paging":true,
+				'searching':true,
+				'order':[[1,'desc']]  //设置默认第一列降排序
+
+
+            });
+
+        });
+	</script>
 {include file="pub/foot" /}
+
+
 
 
 

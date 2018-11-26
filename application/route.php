@@ -33,7 +33,7 @@ Route::get('index','index/VaDate/index');
 //后台路由设置
 Route::group('admin',function(){
     //管理员登录
-    Route::any('manager/login','admin/manager/login',['methed'=>'get|post']);
+    Route::any('admin','admin/manager/login',['methed'=>'get|post']);
     //管理员退出登录
     Route::get('manager/out','admin/manager/out');
 

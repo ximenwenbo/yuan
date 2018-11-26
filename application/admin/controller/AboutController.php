@@ -15,6 +15,9 @@ class AboutController extends Controller
 
         //获取信息
         $infos = Tel::select();
+        dump($infos);
+        exit;
+
 
           $count  = count($infos);
 
@@ -23,6 +26,7 @@ class AboutController extends Controller
 
         $this->assign('infos',$infos);
         $this->assign('count',$count);
+ 
 
         return $this->fetch();
 

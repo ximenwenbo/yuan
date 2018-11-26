@@ -1,5 +1,9 @@
 {include file="pub/head"}
 <title>添加管理员 - 管理员管理 - H-ui.admin v3.1</title>
+<script type="text/javascript" charset="utf-8"
+        src="{:config('plugin')}ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8"
+        src="{:config('plugin')}ueditor/ueditor.all.min.js"> </script>
 <meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
@@ -12,8 +16,8 @@
 
             <div class="formControls col-xs-8 col-sm-9">
 
-                <textarea name="detail_one"   class="textarea"  placeholder="说点什么...300个字符以内" dragonfly="true" >{$info.detail_one ?? ''}</textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/300</p>
+               <textarea id="detail_one" name="detail_one"
+                         style="width:540px;height:180px;">{$info.detail_one}</textarea>
             </div>
         </div>
 
