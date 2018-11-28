@@ -46,7 +46,7 @@ class NewsController extends Controller
     public function last($id){
         $infos  = Db::name('news')
             ->where('id','>',$id)
-            ->order('id desc')
+            ->order('id')
             ->limit(1)
             ->find();
 
@@ -71,7 +71,7 @@ public function index(){
     $this->assign('info',$info);
     //获取新闻信息
     $news = new News();
-    $infos = News::select();
+    $infos = News::order('id desc')->select();
    // $infos = DB::name('news')->order('id desc');
   //  $infos = DB::name('news') ->order('id desc')->paginate(4);
     //$pagelist = $infos->render();

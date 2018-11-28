@@ -3,6 +3,7 @@ namespace app\admin\controller;
 
 
 use app\admin\model\Tel;
+use think\cache\driver\Redis;
 use think\Controller;
 use think\Request;
 use think\Route;
@@ -15,8 +16,10 @@ class AboutController extends Controller
 
         //获取信息
         $infos = Tel::select();
-        dump($infos);
-        exit;
+
+
+
+
 
 
           $count  = count($infos);

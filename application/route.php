@@ -79,6 +79,12 @@ Route::group('admin',function(){
         Route::any('news/xiugai','admin/news/xiugai',['methed'=>'get|post']);
         //删除新闻
         Route::post('news/shanchu','admin/news/shanchu');
+        //banner图片第一张
+        Route::get('lunbo_first/index','admin/lunbo_first/index');
+        //后台-banner图第一张图片上传
+        Route::post('lunbo_first/pics_up','admin/lunbo_first/pics_up');
+        //修改banner图第一张
+        Route::any('lunbo_first/xiugai','admin/lunbo_first/xiugai',['methed'=>'get|post']);
 
 
     },['after_behavior'=>['\app\admin\behavior\CheckLogin']]);
