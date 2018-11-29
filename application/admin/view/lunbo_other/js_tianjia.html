@@ -20,13 +20,7 @@
             //当前“上传插件”绘制完毕，做初始化工作
             //判断商品有默认logo图片就显示
             //onInit:插件准备好后"自动"执行的方法
-            onInit:function(){
-                var img_path = $('#img_path').val();
-                if(img_path != ''){
-                    //对 上传插件 的files属性赋值
-                    this.options.files = [{path:img_path}];
-                }
-            },
+
 
 
             //获得服务器端返回回来的图片上传相关信息
@@ -71,13 +65,13 @@
             $.ajax({
 
                 //url:'{:url("admin/lunbo_first/xiugai")}',
-                url:'{:url("xiugai","",false)}',
+                url:'{:url("tianjia","",false)}',
                 dataType:'json',
                 data:shuju,
                 type:'post',
                 success:function(msg){
                     if(msg.info==1){
-                        layer.alert('修改图片成功',{icon:6},function(){
+                        layer.alert('添加图片成功',{icon:6},function(){
                             //下述① 和 ②执行执行顺序要求
                             //① 在"父级"页面把新图片刷新出来
                             parent.window.location.href=parent.window.location.href;
@@ -89,7 +83,7 @@
                             //② 关闭添加商品的弹框表单页面
                             //layer_close();
                         //});
-                        layer.alert('修改图片失败【'+msg.errorinfo+'】',{icon:5});
+                        layer.alert('添加图片失败【'+msg.errorinfo+'】',{icon:5});
                     }
                 }
             });

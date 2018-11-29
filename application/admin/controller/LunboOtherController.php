@@ -2,13 +2,14 @@
 namespace app\admin\controller;
 
 
-use app\admin\model\LunboFirst;
+use app\admin\model\LunboOther;
 use think\Controller;
 use think\Request;
+use think\Validate;
 
 
 
-class LunboFirstController extends Controller
+class LunboOtherController extends Controller
 {
 
 
@@ -53,7 +54,7 @@ class LunboFirstController extends Controller
 
     public function index(){
 
-         $infos = LunboFirst::select();
+         $infos = LunboOther::select();
 
          $this->assign('infos',$infos);
 
@@ -132,6 +133,38 @@ class LunboFirstController extends Controller
 
     }
 
+    public function tianjia(Request $request){
+        if ($request->isPost()){
+
+
+            $infos = $request->post();
+            //通过程序创建"年月日"的子级目录
+            $path = "./uploads/pics/".date('Ymd');
+            //判断目录不存在
+            if(!file_exists($path)){
+                mkdir($path,0777,true);
+            }
+            //设置图片的"终极"存储目录路径名
+            //./uploads/picstmp/20181129/0c4c6b67dd2b03a3e106334e83373ac8.jpg [临时的]
+            //./uploads/pics/20181129/0c4c6b67dd2b03a3e106334e83373ac8.jpg [终极的]
+            $finalPathName = str_replace('picstmp','pics',$infos['img_path']);
+            //把图片从“临时”位置挪到“终极”存储位置
+            rename($infos['img_path'],$finalPathName);
+            $infos['img_path'] = $finalPathName;  //终极路径名要存储到数据库中去
+            $lunboother = new LunboOther();
+            $rst = $lunboother ->save($infos);
+
+            if ($rst){
+                return ['info'=>1];
+            }else{
+                return  ['info'=>0];
+            }
+
+        }else{
+            return $this->fetch();
+        }
+
+    }
 
 
 

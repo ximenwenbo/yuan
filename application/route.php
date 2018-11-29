@@ -85,7 +85,12 @@ Route::group('admin',function(){
         Route::post('lunbo_first/pics_up','admin/lunbo_first/pics_up');
         //修改banner图第一张
         Route::any('lunbo_first/xiugai','admin/lunbo_first/xiugai',['methed'=>'get|post']);
-
+        //除banner图片第一张外的设置
+        Route::get('lunbo_other/index','admin/lunbo_other/index');
+        //后台-banner图片上传(除了第一张)
+        Route::post('lunbo_other/pics_up','admin/lunbo_other/pics_up');
+        //上传banner图（不包括第一张）
+        Route::any('lunbo_other/tianjia','admin/lunbo_other/tianjia',['methed'=>'get|post']);
 
     },['after_behavior'=>['\app\admin\behavior\CheckLogin']]);
 
