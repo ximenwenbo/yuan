@@ -4,7 +4,7 @@ namespace  app\admin\model;
 use think\Model;
 use traits\model\SoftDelete;
 
-class Business extends model{
+class Business extends Model{
     use SoftDelete;
 
     //控制器方法依赖注入执行的地方

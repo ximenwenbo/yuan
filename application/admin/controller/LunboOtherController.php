@@ -68,7 +68,7 @@ class LunboOtherController extends Controller
      * 轮播图第一张修改
      */
 
-    public function xiugai(Request $request,LunboFirst $lunboFirst){
+    public function xiugai(Request $request,LunboOther $lunboOther){
 
 
         if ($request->isPost()){
@@ -84,8 +84,8 @@ class LunboOtherController extends Controller
 
                 //① 判断有上传新banner图片才维护
                 //② 删除当前对应的旧图片(删除物理图片)
-                if(!empty($lunboFirst->img_path) && file_exists($lunboFirst->img_path)){
-                    unlink($lunboFirst->img_path);
+                if(!empty($lunboOther->img_path) && file_exists($lunboOther->img_path)){
+                    unlink($lunboOther->img_path);
                 }
 
                 //③ 创建"年月日"的文件目录
@@ -100,16 +100,16 @@ class LunboOtherController extends Controller
                 //设置 终极图片路径名 存储到数据库中
                 $infos['img_path'] = $finalPathName;
 
-            }elseif(empty($infos['img_path']) && !empty($lunboFirst->img_path)){
+            }elseif(empty($infos['img_path']) && !empty($lunboOther->img_path)){
                 //B. 清除商品原有的旧图片
-                if(file_exists($lunboFirst->img_path)){
-                    unlink($lunboFirst->img_path);
+                if(file_exists($lunboOther->img_path)){
+                    unlink($lunboOther->img_path);
                 }
             }else{
                 //C. 保持原有logo图片不变(不要修改)
                 unset($infos['img_path']);
             }
-            $result = $lunboFirst->update($infos);
+            $result = $lunboOther->update($infos);
             if ($result){
 
                 return ['info'=>1];
@@ -120,7 +120,7 @@ class LunboOtherController extends Controller
 
 
         }else{
-            $this->assign('info',$lunboFirst);
+            $this->assign('info',$lunboOther);
 
 
 
@@ -166,8 +166,34 @@ class LunboOtherController extends Controller
 
     }
 
+    public function shanchu(LunboOther $lunboOther){
+
+       $rst = $lunboOther->delete();
+       if ($rst){
+           return ['info'=>1];
+       }else{
+           return ['info'=>0];
+       }
+
+    }
 
 
+/**
+ * @Param  banner图上线与下线
+ */
+
+    public function change_status(Request $request){
+        $info = $request->post(); // ['id'=>5,'is_use'=>0];
+       $rst  = LunboOther::update($info);
+
+       if ($rst){
+           return ['info'=>1];
+       }else{
+           return ['info'=>0];
+       }
+
+
+    }
 
 
 

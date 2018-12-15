@@ -2,7 +2,7 @@
 namespace  app\admin\model;
 
 use think\Model;
-class Shouye extends model{
+class Shouye extends Model{
 
 
     //控制器方法依赖注入执行的地方

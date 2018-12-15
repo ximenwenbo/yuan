@@ -13,14 +13,14 @@
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="{:config('home_images')}m1.jpg" >
+                <img src="{:substr($first.img_path,1)}" >
 
             </div>
             <div class="item">
-                <img src="{:config('home_images')}banner.jpg" >
+                <img src="{:substr($second,1)}" >
             </div>
             <div class="item">
-                <img src="{:config('home_images')}banner.jpg" >
+                <img src="{:substr($third,1)}" >
             </div>
         </div>
         <!-- 轮播（Carousel）导航 -->
@@ -86,7 +86,7 @@
                 <div class="col-md-7 col-sm-7 col-xs-12">
                     <div class="culture-left">
                         <div class="culture-text">
-                            <h2>公司文化:</h2>
+                            <h2>品牌文化:</h2>
                             <p>{$infos.detail_one}</p>
                         </div>
                     </div>

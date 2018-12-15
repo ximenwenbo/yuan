@@ -46,9 +46,9 @@ class AboutController extends Controller
             if($rst){
 
 
-                return   ['status'=>'success'];
+                return   ['info'=>1];
             }else{
-                return  ['status'=>'failure'];
+                return  ['info'=>0];
             }
 
         }else{

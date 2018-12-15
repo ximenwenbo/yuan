@@ -3,7 +3,7 @@ namespace  app\admin\model;
 
 use think\Model;
 use traits\model\SoftDelete;
-class News extends model{
+class News extends Model{
 
     use SoftDelete;
 

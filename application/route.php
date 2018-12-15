@@ -26,6 +26,10 @@ Route::group('home',function(){
     Route::get('contact/index','home/contact/index');
     //引入地图
     Route::get('contact/map','home/contact/map');
+    //公司团队首页
+    Route::get('team/index','home/team/index');
+    //产品服务首页
+    Route::get('product/index','home/product/index');
 });
 
 Route::get('index','index/VaDate/index');
@@ -89,8 +93,32 @@ Route::group('admin',function(){
         Route::get('lunbo_other/index','admin/lunbo_other/index');
         //后台-banner图片上传(除了第一张)
         Route::post('lunbo_other/pics_up','admin/lunbo_other/pics_up');
-        //上传banner图（不包括第一张）
+        //添加banner图（不包括第一张）
         Route::any('lunbo_other/tianjia','admin/lunbo_other/tianjia',['methed'=>'get|post']);
+       //修改banner图
+        Route::any('lunbo_other/xiugai','admin/lunbo_other/xiugai',['methed'=>'get|post']);
+        //删除banner图
+        Route::post('lunbo_other/shanchu','admin/lunbo_other/shanchu');
+        //banner图上线设置
+        Route::post('lunbo_other/change_status','admin/lunbo_other/change_status');
+        //公司团队首页
+        Route::get('team/index','admin/team/index');
+        //添加团队成员
+        Route::any('team/tianjia','admin/team/tianjia',['methed'=>'get|post']);
+        //修改团队成员
+        Route::any('team/xiugai','admin/team/xiugai',['methed'=>'get|post']);
+        //删除团队成员
+        Route::post('team/shanchu','admin/team/shanchu');
+        //团队图片上传
+        Route::post('team/pics_up','admin/team/pics_up');
+        //产品服务列表
+        Route::get('product_service/index','admin/product_service/index');
+        //添加产品服务
+        Route::any('product_service/tianjia','admin/product_service/tianjia');
+        //修改产品服务
+        Route::any('product_service/xiugai','admin/product_service/xiugai');
+        //删除产品服务
+        Route::post('product_service/delete','admin/product_service/delete');
 
     },['after_behavior'=>['\app\admin\behavior\CheckLogin']]);
 

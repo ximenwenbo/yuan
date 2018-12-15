@@ -2,8 +2,9 @@
 namespace  app\admin\model;
 
 use think\Model;
-class LunboOther extends model{
-
+use traits\model\SoftDelete;
+class LunboOther extends Model{
+use SoftDelete;
     //控制器方法依赖注入执行的地方
     public static function invoke(\think\Request $request)
     {
