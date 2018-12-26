@@ -9,12 +9,12 @@
     function member_del(obj,id){
         layer.confirm('确认要删除吗？',function(){
             $.ajax({
-                url:'{:url("shanchu")}',
+                url:'{:url("delete")}',
                 type: 'POST',
                 dataType: 'json',
-                data:{id:id},
+                data:{product_id:id},
                 success: function(msg){
-                    if(msg.status=='success'){
+                    if(msg.info==1){
                         //删除页面商品对应的tr
                         $(obj).closest('tr').remove();
                         layer.msg('已删除!',{icon:1,time:1000});  //做1s种的弹框提示

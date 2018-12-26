@@ -8,8 +8,7 @@ Route::rule('/','home/index/index','GET');  //首页路由注册
 
 //前台路由设置
 Route::group('home',function(){
-    //前台首页
-    Route::get('index/index','home/index/index');
+
     //前台关于我们
     Route::get('about/index','home/about/index');
     //前台团队服务
@@ -53,6 +52,8 @@ Route::group('admin',function(){
         Route::get('about/tel','admin/about/tel');
         //联系方式修改
         Route::any('about/xiugai','admin/about/xiugai');
+        //上传公司二位码
+        Route::post('about/pics_up','admin/about/pics_up');
         //修改前台首页企业文化
         Route::any('abouts/edit','admin/abouts/edit',['methed'=>'get|post']);
         //前台企业文化
@@ -83,6 +84,8 @@ Route::group('admin',function(){
         Route::any('news/xiugai','admin/news/xiugai',['methed'=>'get|post']);
         //删除新闻
         Route::post('news/shanchu','admin/news/shanchu');
+        //新闻批量删除
+        Route::post('news/delsel','admin/news/delsel');
         //banner图片第一张
         Route::get('lunbo_first/index','admin/lunbo_first/index');
         //后台-banner图第一张图片上传
@@ -111,17 +114,32 @@ Route::group('admin',function(){
         Route::post('team/shanchu','admin/team/shanchu');
         //团队图片上传
         Route::post('team/pics_up','admin/team/pics_up');
-        //产品服务列表
-        Route::get('product_service/index','admin/product_service/index');
+        //产品服务分类列表
+        Route::get('product_category/index','admin/product_category/index');
         //添加产品服务
-        Route::any('product_service/tianjia','admin/product_service/tianjia');
+        Route::any('product_category/tianjia','admin/product_category/tianjia');
         //修改产品服务
-        Route::any('product_service/xiugai','admin/product_service/xiugai');
+        Route::any('product_category/xiugai','admin/product_category/xiugai');
         //删除产品服务
-        Route::post('product_service/delete','admin/product_service/delete');
+        Route::post('product_category/shanchu','admin/product_category/shanchu');
+        //产品列表
+        Route::get('product/index','admin/product/index');
+        //添加产品
+        Route::any('product/tianjia','admin/product/tianjia');
+        //修改产品
+        Route::any('product/xiugai','admin/product/xiugai');
+        //删除产品
+        Route::post('product/delete','admin/product/delete');
+        //产品图片上传
+        Route::post('product/pics_up','admin/product/pics_up');
+
+
+
 
     },['after_behavior'=>['\app\admin\behavior\CheckLogin']]);
 
 
 
+
 });
+

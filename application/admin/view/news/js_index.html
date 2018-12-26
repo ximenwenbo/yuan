@@ -60,22 +60,25 @@
     function delsel(){
         //获取选中的元素对象集
        var aa  = $('[name ^=aa]:checked');
+
+
         var arr = [];
         aa.each(function(){
            var  obj = $(this).val();
         arr.push(obj);
         });
 
+
         if(arr.length !== 0){layer.confirm('确认要删除吗？',function(){
             $.ajax({
                 url:'{:url("delsel")}',
                 type: 'POST',
                 dataType: 'json',
-                data:{goods_ids:arr},
+                data:{ids:arr},
 
 
                 success: function(msg){
-                    if(msg.status=='success'){
+                    if(msg.info == 1){
                         //删除页面商品对应的tr
                         aa.each(function(){
                             var  obj = $(this);

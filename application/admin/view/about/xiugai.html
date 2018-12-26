@@ -28,7 +28,42 @@
 				<input type="text" class="input-text"  value="{$tel.email}" placeholder="@" name="email" >
 			</div>
 		</div>
-
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>icp证书号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text"  value="{$tel.icp}"  name="icp" >
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>公司名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text"  value="{$tel.company_name}"  name="company_name" >
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>公司二维码：</label>
+			<link rel="stylesheet" href="{:config('plugin')}hhuploadify/HHuploadify.css" />
+			<script src="{:config('plugin')}hhuploadify/HHuploadify.js"></script>
+			<div class="formControls col-xs-8 col-sm-9">
+				<!--上传图片插件按钮容器-->
+				<div class="formControls col-xs-8 col-sm-9" id="img"></div>
+				<!--制作一个隐藏域 用于存储服务器端返回的上传图片的“路径名”信息-->
+				<input type="hidden" id="code_img" name="code_img"
+					   value="{:substr($tel.code_img,1)}" />
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text"  value="{$tel.email}" placeholder="@" name="email" >
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">copyrigtht：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text"  value="{$tel.copyrigtht}"  name="copyrigtht" >
+			</div>
+		</div>
 
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">网址：</label>

@@ -18,13 +18,36 @@
         </div>
     </div>
 </div>
+
+<div class="caseList">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab">
+                    <ul id="myTab">
+                        <li class="active">
+                            <a href="#webDesign" data-toggle="tab">公司要闻</a>
+                        </li>
+                        <li>
+                            <a href=".appDesign" data-toggle="tab">行业资讯</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 <!--newslist-->
 <div class="newsList">
     <div class="container">
         <div class="row">
             {volist name="infos" id='v'}
             <div class="col-md-6">
-                <a href="/home/news/detail?id= +{$v.id}">
+                <a href="/home/news/detail?id= +{$v.id}.html">
                     <div class="newsItem">
                         <div class="row">
                             <div class="col-md-5 col-sm-5 paddR">
@@ -38,7 +61,7 @@
                                     <p>
                                         {$v.keywords}
                                     </p>
-                                    <span>MORE</span>
+                                    <span>{:substr($v.create_time,0,10)}</span>
                                 </div>
                             </div>
                         </div>

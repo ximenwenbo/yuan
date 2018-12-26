@@ -25,468 +25,75 @@
             <div class="col-md-12">
                 <div class="tab">
                     <ul id="myTab">
-                        <li class="active">
-                            <a href="#webDesign" data-toggle="tab">智能家电</a>
+                        <li class="aa">
+                            <a onclick="shuaxin()"   class="bb" data-toggle="tab">全部产品</a>
                         </li>
-                        <li>
-                            <a href="#appDesign" data-toggle="tab">玩具学习</a>
+                        {volist name="category"  id="v"}
+                        <li >
+                            <a href="#{$v.category_id}"   class="bb" data-toggle="tab">{$v.category_name}</a>
                         </li>
-                        <li>
-                            <a href="#hFiveWeb" data-toggle="tab">娱乐影音</a>
-                        </li>
+                        {/volist}
 
-                        <li>
-                            <a href="#mobileWeb" data-toggle="tab">线下服务</a>
-                        </li>
+
 
                     </ul>
                 </div>
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade in active" id="webDesign">
+                    {volist name="category"  id="vv"}
+                    <div class="tab-pane fade in active" id="{$vv.category_id}">
                         <div class="row">
+                            {volist name="product" id="vvv"}
+
+                                {eq name="$vvv.category_id"  value="$vv.category_id"}
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="caseItem">
                                     <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
+                                    <h5>{$vvv.product_price}</h5>
+                                    <p>{$vvv.product_name}</p>
                                     <div class="footLink">
                                         <div>
                                             <a href="javascript:;" class="leftLink">网站页面</a>
+
                                         </div>
                                         <a href="javascript:;" class="rightLink">查看页面</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
+                                {/eq}
+                            {/volist}
+
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="appDesign">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="hFiveWeb">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="mobileWeb">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img2.jpg" class="img-responsive">
-                                    <h5>网易考拉海购：你中年危机了吗</h5>
-                                    <p>上绝大部分的畅销书皆是一群欺世盗名的泛泛之辈所著</p>
-                                    <div class="footLink">
-                                        <div>
-                                            <a href="javascript:;" class="leftLink">网站页面</a>
-                                        </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/volist}
+
                 </div>
+
                 <div class="page"></div>
             </div>
         </div>
     </div>
     <script>
+
+        function shuaxin(){
+            location.reload();
+        }
+
+
+
         $(".page").createPage({
             pageCount:10,
             current:1,
             backFn:function(p){
-                //console.log(p);
+                console.log(p);
             }
         });
+
+          var aa =  $('.aa')[0];
+
+         aa.className = "active";
+
+
+
     </script>
 </div>
 <!----footer---->

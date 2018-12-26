@@ -10,7 +10,7 @@ class News extends Model{
     //控制器方法依赖注入执行的地方
     public static function invoke(\think\Request $request)
     {
-        $id = $request->param('id');
+        $id = $request->param();
         return self::find($id);
     }
 

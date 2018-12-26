@@ -7,11 +7,11 @@
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="tianjia">
-		<input type="hidden" name="id" value="{$info.service_id}">
+		<input type="hidden" name="category_id" value="{$info.category_id}">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>产品服务名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text"  maxlength="15" class="input-text"  value="{$info.service_name}"   id="service_name" name="service_name">
+				<input type="text"  maxlength="15" class="input-text"  value="{$info.category_name}"   id="category_name" name="category_name">
 			</div>
 		</div>
 
@@ -74,4 +74,4 @@ $(function(){
 </script> 
 <!--/请在上方写此页面业务相关的脚本-->
 {include file="pub/foot"}
-{include file="product_service/js_xiugai"}
+{include file="product_category/js_xiugai"}

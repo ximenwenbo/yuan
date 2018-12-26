@@ -134,6 +134,21 @@ class NewsController extends Controller
     }
 
 
+    public function delsel($ids){
+
+        $news = new News();
+        $rst = $news->where('id','in',$ids)->delete();
+
+        if ($rst){
+            return ['info'=>1];
+        }else{
+            return ['info'=>0];
+
+        }
+
+    }
+
+
 
 
 

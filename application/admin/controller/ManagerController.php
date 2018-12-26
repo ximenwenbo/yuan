@@ -42,6 +42,6 @@ class ManagerController extends Controller{
         //清除session
         session(null);
         //跳转到登录页面
-        $this->redirect('Manager/login');
+        $this->redirect('/admin/admin');
     }
 }

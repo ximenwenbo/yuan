@@ -2,7 +2,11 @@
 namespace app\home\controller;
 
 
+use app\home\model\ProductCategory;
 use think\Controller;
+use app\home\model\Product;
+use think\Db;
+
 
 
 class ProductController extends Controller
@@ -15,8 +19,20 @@ class ProductController extends Controller
 
         $this->assign('info',$info);
 
-        $in = 'appDesign';
-        $this->assign('in',$in);
+            //获取产品分类列表
+          $category  =   ProductCategory::select();
+          $this->assign('category',$category);
+         //获取产品列表
+        $product = Product::select();
+
+
+
+        $this->assign('product',$product);
+
+
+
+
+
 
 
 

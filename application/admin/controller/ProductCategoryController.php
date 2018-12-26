@@ -3,12 +3,12 @@ namespace app\admin\controller;
 
 
 
-use app\admin\model\ProductService;
+use app\admin\model\ProductCategory;
 use think\Controller;
 use think\Request;
 
 
-class ProductServiceController extends  Controller{
+class ProductCategoryController extends  Controller{
 
     public function index(){
 
@@ -16,7 +16,7 @@ class ProductServiceController extends  Controller{
          * @param 获得团队列表
          */
 
-        $teams = ProductService::select();
+        $teams = ProductCategory::select();
 
         $this->assign('info',$teams);
 
@@ -34,7 +34,7 @@ class ProductServiceController extends  Controller{
     public function tianjia(Request $request){
         if ($request->isPost()){
             $data = $request->post();
-          $product = new ProductService();
+          $product = new ProductCategory();
           $rst  = $product->save($data);
 
 
@@ -60,7 +60,7 @@ class ProductServiceController extends  Controller{
     /**
      *   修改团队成员
      */
-    public function xiugai(Request $request,ProductService $productService){
+    public function xiugai(Request $request,ProductCategory $productCategory){
 
 
         if ($request->isPost()){
@@ -72,7 +72,7 @@ class ProductServiceController extends  Controller{
 
 
 
-         $result = $productService->Update($infos);
+         $result = $productCategory->Update($infos);
 
 
 
@@ -88,7 +88,11 @@ class ProductServiceController extends  Controller{
 
 
         }else{
-            $this->assign('info',$productService);
+
+
+
+
+            $this->assign('info',$productCategory);
 
 
 
@@ -137,15 +141,15 @@ class ProductServiceController extends  Controller{
      *   删除成员
      */
 
-    public function shanchu(Team $team){
+    public function shanchu(ProductCategory $productCategory){
 
-        $rst = $team->delete();
+        $rst = $productCategory->delete();
 
         if ($rst){
 
             return ['info'=>1];
         }else{
-            return ['info'=>1];
+            return ['info'=>0];
         }
 
 

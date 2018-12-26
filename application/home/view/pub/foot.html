@@ -17,7 +17,7 @@
 
                     <div>
                         <a href="#" class="thumbnail">
-                            <img src="{:config('home_images')}erweima2.jpg">
+                            <img src="{:substr($info.code_img,1)}">
                         </a>
                         <p>扫码关注隆富盛元微信公众号</p>
                     </div>
@@ -27,7 +27,7 @@
     </div>
 </div>
 <div id="copyright">
-    <p><span>服务条款</span>Copyright©2018　北京隆富盛元科技发展有限公司　保留所有权利　京ICP证030173号</p>
+    <p><span>服务条款</span>{$info.copyrigtht}　{$info.company_name}　保留所有权利　{$info.icp}</p>
 </div>
 </body>
 </html>
