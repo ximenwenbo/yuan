@@ -3,10 +3,12 @@ namespace app\home\controller;
 
 
 
+use app\admin\model\NewsCategory;
 use think\Controller;
 use app\home\model\News;
 use think\Request;
 use think\Db;
+use think\Route;
 
 
 class NewsController extends Controller
@@ -24,9 +26,10 @@ class NewsController extends Controller
         die;
     }
 
-    public function next($id){
+    public function next($id,$cat_id){
      $infos  = Db::name('news')
          ->where('id','<',$id)
+         ->where('category_id','=',$cat_id)
          ->order('id desc')
          ->limit(1)
          ->find();
@@ -43,12 +46,22 @@ class NewsController extends Controller
 
 
     }
-    public function last($id){
-        $infos  = Db::name('news')
-            ->where('id','>',$id)
+    public function last($id,$cat_id){
+
+
+
+
+
+
+
+         $news = new News();
+        $infos  = $news->where('id','>',$id)
+            ->where('category_id','=',$cat_id)
             ->order('id')
             ->limit(1)
             ->find();
+
+
 
         if ($infos !== null){
 
@@ -68,7 +81,12 @@ public function index(){
     //获取联系方式
     $info = get_tel();
 
+
+
     $this->assign('info',$info);
+
+    $data = NewsCategory::select();
+    $this->assign('data',$data);
     //获取新闻信息
     $news = new News();
     $infos = News::order('id desc')->select();
@@ -94,6 +112,7 @@ public function detail(News $news){
     return $this->fetch();
 
 }
+
 
 
 

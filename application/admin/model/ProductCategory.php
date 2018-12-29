@@ -10,7 +10,7 @@ class ProductCategory extends Model{
     //控制器方法依赖注入执行的地方
     public static function invoke(\think\Request $request)
     {
-        $id = $request->param();
+        $id = $request->param('category_id');
         return self::find($id);
     }
 
