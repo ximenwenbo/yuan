@@ -4,7 +4,7 @@ namespace app\home\controller;
 
 use think\Controller;
 use app\home\model\Contact;
-
+use think\Db;
 class ContactController extends Controller
 {
     public function index()
@@ -18,7 +18,10 @@ class ContactController extends Controller
 
 
 
+        $img = Db::table('lf_picture')->where('id','=',7)->find();
 
+
+        $this->assign('img',$img);
 
         return $this->fetch();
 

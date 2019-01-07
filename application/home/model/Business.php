@@ -14,5 +14,8 @@ class Business extends model{
         $id = $request->param('id');
         return self::find($id);
     }
+    public function aa(){
+        return 123;
+    }
 
 }

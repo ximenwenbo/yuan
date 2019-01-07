@@ -4,6 +4,7 @@ namespace app\home\controller;
 
 use think\Controller;
 use app\home\model\Profiles;
+use app\home\model\Picture;
 
 class AboutController extends Controller
 {
@@ -20,6 +21,13 @@ class AboutController extends Controller
         $infos = $p->select()[0];
 
         $this->assign('infos',$infos);
+
+        //获取图片
+
+        $data = Picture::where('id','in','1,2,3')->select();
+
+       $this->assign('data',$data);
+
 
 
 

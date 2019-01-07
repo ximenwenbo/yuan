@@ -8,13 +8,13 @@
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="edit">
 
-
-
 		<div class="row cl">
-			<div style="font:12px bolder '微软雅黑'; text-align:center;">
-				<font color="red" size="28"></font>
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>描述（位置和规格）：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text"   class="input-text"   name="describe">
 			</div>
 		</div>
+
 		<link rel="stylesheet" href="{:config('plugin')}hhuploadify/HHuploadify.css" />
 		<script src="{:config('plugin')}hhuploadify/HHuploadify.js"></script>
 		<div class="row cl">
@@ -22,8 +22,8 @@
 			<!--上传图片插件按钮容器-->
 			<div class="formControls col-xs-8 col-sm-9" id="imgpath"></div>
 			<!--制作一个隐藏域 用于存储服务器端返回的上传图片的“路径名”信息-->
-			<input type="hidden" id="img_path" name="img_path"
-				   value="}" />
+			<input type="hidden" id="img" name="img"
+				    />
 
 		</div>
 
@@ -85,5 +85,5 @@ $(function(){
 });
 </script> 
 <!--/请在上方写此页面业务相关的脚本-->
-{include file="lunbo_other/js_tianjia"}
+{include file="picture/js_tianjia"}
 {include file="pub/foot"}

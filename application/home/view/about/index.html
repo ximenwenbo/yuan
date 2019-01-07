@@ -26,7 +26,7 @@
 
 <!--publicBanner-->
 <div class="piblicBanner">
-    <img src="{:config('home_images')}innerPublicBanner.jpg">
+    <img    src="{:substr($data[0]['img'],1)}">
 
 </div>
 <!--aboutHighDao-->
@@ -58,7 +58,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="aboutImg">
-                                    <img src="{:config('home_images')}aboutImg.jpg" class="img-responsive">
+                                    <img  width="650" height="300" src="{:substr($data[1]['img'],1)}" class="img-responsive">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class="companyProfiles" id="companyProfiles">
-        <img src="{:config('home_images')}companyimg.jpg" class="img-responsive">
+        <img src="{:substr($data[2]['img'],1)}" class="img-responsive">
         <div class="companyInfo">
             <div class="container">
                 <div class="row">

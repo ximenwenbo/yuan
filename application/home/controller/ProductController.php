@@ -25,6 +25,11 @@ class ProductController extends Controller
          //获取产品列表
         $product = Product::select();
 
+        //获取banner图
+        $img = DB::table('lf_picture')->where('id','=',4)->find();
+
+
+$this->assign('img',$img);
 
 
         $this->assign('product',$product);

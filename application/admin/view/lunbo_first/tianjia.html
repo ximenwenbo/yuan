@@ -7,23 +7,18 @@
 <body>
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="edit">
-		<input type="hidden" name="id" value="{$info.id}">
 
 
-		<div class="row cl">
-			<div style="font:12px bolder '微软雅黑'; text-align:center;">
-				<font color="red" size="28">修改图片请先删除原图片</font>
-			</div>
-		</div>
+
 		<link rel="stylesheet" href="{:config('plugin')}hhuploadify/HHuploadify.css" />
 		<script src="{:config('plugin')}hhuploadify/HHuploadify.js"></script>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-3">banner第一张：</label>
+			<label class="form-label col-xs-4 col-sm-3">banner图：</label>
 			<!--上传图片插件按钮容器-->
 			<div class="formControls col-xs-8 col-sm-9" id="imgpath"></div>
 			<!--制作一个隐藏域 用于存储服务器端返回的上传图片的“路径名”信息-->
 			<input type="hidden" id="img_path" name="img_path"
-				   value="{:substr($info.img_path,1)}" />
+				    />
 
 		</div>
 
@@ -85,5 +80,5 @@ $(function(){
 });
 </script> 
 <!--/请在上方写此页面业务相关的脚本-->
-{include file="lunbo_other/js_xiugai"}
+{include file="lunbo_first/js_tianjia"}
 {include file="pub/foot"}

@@ -90,15 +90,19 @@ public function index(){
     //获取新闻信息
     $news = new News();
     $infos = News::order('id desc')->select();
-   // $infos = DB::name('news')->order('id desc');
-  //  $infos = DB::name('news') ->order('id desc')->paginate(4);
-    //$pagelist = $infos->render();
-   // $this->assign('pagelist',$pagelist);
+
 
 
 
     //分配到模板
     $this->assign('infos',$infos);
+
+    //获取banner图
+    $img = DB::table('lf_picture')->where('id','=',5)->find();
+
+
+
+    $this->assign('img',$img);
     //展示模板
     return $this->fetch();
 
