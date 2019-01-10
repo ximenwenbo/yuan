@@ -26,7 +26,15 @@
 
 <!--publicBanner-->
 <div class="piblicBanner">
-    <img    src="{:substr($data[0]['img'],1)}">
+    <img  class="ggg"   src="{:substr($data[0]['img'],1)}">
+
+    <style>
+        @media screen and (min-width: 1201px){
+            .ggg{
+                height: 550px;
+            }
+        }
+    </style>
 
 </div>
 <!--aboutHighDao-->
@@ -75,7 +83,16 @@
         </div>
     </div>
     <div class="companyProfiles" id="companyProfiles">
-        <img src="{:substr($data[2]['img'],1)}" class="img-responsive">
+        <img src="{:substr($data[2]['img'],1)}"  id="as" class="img-responsive">
+        <style>
+            @media screen and (min-width: 1201px){
+                #as{
+                    height: 550px;
+                    width: 1920px;
+                }
+            }
+        </style>
+
         <div class="companyInfo">
             <div class="container">
                 <div class="row">

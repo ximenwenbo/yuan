@@ -89,7 +89,27 @@ public function index(){
     $this->assign('data',$data);
     //获取新闻信息
     $news = new News();
-    $infos = News::order('id desc')->select();
+
+
+
+    $link = mysqli_connect('localhost','root','root');
+    mysqli_select_db($link,'admin')  ;
+    mysqli_set_charset($link,'utf-8');
+
+    /**
+     *
+     */
+
+    $sql = "select * from lf_news as a where 6>(select count(*) from lf_news 
+ where category_id=a.category_id and create_time > a.create_time )
+order by a.category_id,a.create_time desc";
+
+    $dat  = mysqli_query($link,$sql);
+
+    $infos = mysqli_fetch_all($dat,MYSQLI_ASSOC);
+
+
+
 
 
 
@@ -97,8 +117,9 @@ public function index(){
     //分配到模板
     $this->assign('infos',$infos);
 
+
     //获取banner图
-    $img = DB::table('lf_picture')->where('id','=',5)->find();
+    $img = Db::table('lf_picture')->where('id','=',5)->find();
 
 
 

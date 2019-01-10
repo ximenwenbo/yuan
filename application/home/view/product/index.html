@@ -47,15 +47,15 @@
                                 {eq name="$vvv.category_id"  value="$vv.category_id"}
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="caseItem">
-                                    <img src="{:config('home_images')}case-img1.jpg" class="img-responsive">
-                                    <h5>{$vvv.product_price}</h5>
+                                    <img src="{:substr($vvv.product_img,1)}"  width="480" height="480"  class="img-responsive">
+                                    <h5>￥{$vvv.product_price}</h5>
                                     <p>{$vvv.product_name}</p>
                                     <div class="footLink">
                                         <div>
-                                            <a href="{$vvv.product_link}" class="leftLink">商品链接</a>
+                                            <a href="{$vvv.product_link}" target="view_window" class="leftLink">商品链接</a>
 
                                         </div>
-                                        <a href="javascript:;" class="rightLink">查看页面</a>
+                                        <a href="{$vvv.product_link}" target="view_window" class="rightLink">查看详情</a>
                                     </div>
                                 </div>
                             </div>

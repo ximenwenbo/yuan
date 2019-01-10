@@ -37,20 +37,20 @@
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-xs-8">
-          <input name="mg_name" type="text" placeholder="账户" class="input-text size-L">
+          <input name="mg_name"   value="<?php echo isset($_COOKIE['name'])?$_COOKIE['name']:'' ?>" type="text" placeholder="账户" class="input-text size-L">
         </div>
       </div>
 
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-xs-8">
-          <input name="mg_pwd" type="password" placeholder="密码" class="input-text size-L">
+          <input name="mg_pwd" type="password"  value="<?php echo isset($_COOKIE['pwd'])?$_COOKIE['pwd']:'' ?>"  placeholder="密码" class="input-text size-L">
         </div>
       </div>
 
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input class="input-text size-L" type="text" placeholder="验证码"
+          <input class="input-text size-L"    type="text" placeholder="验证码"
                  onblur="if(this.value==''){this.value='验证码:'}"
                  onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:"
                  style="width:150px;"
@@ -65,7 +65,7 @@
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
           <label for="online">
-            <input type="checkbox" name="online" id="online" value="">
+            <input type="checkbox" name="online" id="online" value="15">
             使我保持登录状态</label>
         </div>
       </div>
